@@ -6,6 +6,8 @@ pymysql
 psycopg2-binary
 pandas
 numpy
+os
+io
 
 # ไลบรารี Google Cloud
 google-cloud-storage
