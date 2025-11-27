@@ -1,0 +1,45 @@
+# ไลบรารีพื้นฐาน
+requests
+python-dotenv
+sqlalchemy
+pymysql
+psycopg2-binary
+pandas
+numpy
+
+# ไลบรารี Google Cloud
+google-cloud-storage
+google-cloud-bigquery
+
+# ไลบรารี Geospatial
+Shapely
+Pyproj
+Fiona
+geopandas
+geoalchemy2
+
+# ไลบรารีairflow
+apache-airflow
+apache-airflow-providers-postgres
+
+# API
+# Python Package Dependencies for FastAPI Project
+
+# Core web framework
+fastapi
+
+# Data validation and serialization (มาพร้อมกับ FastAPI)
+pydantic
+
+# ASGI server used to run FastAPI (The server itself)
+uvicorn[standard]
+# The part in brackets [standard] is called an "extra" 
+# which installs optional, but often necessary, dependencies 
+# like 'python-dotenv', 'h11', and 'httptools' for better performance and features.
+
+# Library สำหรับ GCP/Airflow:
+google-cloud-storage
+google-cloud-bigquery
+apache-airflow-providers-google
+
+# pip install -r requirements.txt
