@@ -1,6 +1,6 @@
-from scripts.extract import extract_web_api
-from scripts.transfrom import transfrom_data_from_gcs
-from scripts.load import load_data_from_gcs_to_db
+from plugins.extract import extract_web_api
+from plugins.transfrom import transfrom_data_from_gcs
+from plugins.load import load_data_from_gcs_to_db
 
 from airflow import DAG
 from airflow.operators.python import PythonOperator
