@@ -41,7 +41,7 @@ with DAG(
         python_callable=transfrom_data_from_gcs,
         op_kwargs={
             'bucket_name': BUCKET_NAME,
-            'destination_processed_path': DESTINATION_RAW_PATH
+            'destination_processed_path': DESTINATION_PROCRESSED_PATH
         }
     )
 
