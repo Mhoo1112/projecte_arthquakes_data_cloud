@@ -145,7 +145,7 @@ def transfrom_data_from_gcs(bucket_name, destination_processed_path, **kwargs):
     parquet_full_path = os.path.join(destination_processed_path, f"{filename}.parquet")
     parquet_blob = bucket.blob(parquet_full_path) # << อ้างอิงจาก path ทั้งหมดที่สร้าง
     # อัปโหลดข้อมูล Bytes ไปที่ GCS โดยตรง
-    parquet_blob.upload_from_bytes(parquet_content, content_type='application/octet-stream')
+    parquet_blob.upload_from_string(parquet_content, content_type='application/octet-stream')
 
     
     # -- แสดงข้อมูล --

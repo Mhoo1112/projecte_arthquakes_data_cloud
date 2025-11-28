@@ -69,18 +69,14 @@ def extract_web_api(url, bucket_name, destination_raw_path, **kwargs):
         
         # กำหนด "ไฟล์จำลอง" ภายใน RAM
         csv_buffer = io.StringIO()
-
         # บันทึกข้อมูล Dataframe จากตัวแปร >> df_features << ไปที่ ไฟล์จำลอง
         df_features.to_csv(csv_buffer, index=False)
-
         # ดึงเนื้อหาทั้งหมดที่อยู่ใน buffer
         csv_content = csv_buffer.getvalue() # อ้างอิงจาก >> io.StringIO() คืนค่าเป็น Str
-
         # กำหนด Blob ปลายทางของ .csv
         # >> destination_raw_path ค่าที่ส่งมาจากไฟล์ DAG
         csv_full_path = os.path.join(destination_raw_path, f"{filename}.csv")
         csv_blob = bucket.blob(csv_full_path) # << อ้างอิงจาก path ทั้งหมดที่สร้าง
-
         # อัปโหลดข้อมูล String ไปที่ GCS โดยตรง
         csv_blob.upload_from_string(csv_content, content_type='text/csv')
 
@@ -96,7 +92,7 @@ def extract_web_api(url, bucket_name, destination_raw_path, **kwargs):
         parquet_full_path = os.path.join(destination_raw_path, f"{filename}.parquet")
         parquet_blob = bucket.blob(parquet_full_path) # << อ้างอิงจาก path ทั้งหมดที่สร้าง
         # อัปโหลดข้อมูล Bytes ไปที่ GCS โดยตรง
-        parquet_blob.upload_from_bytes(parquet_content, content_type='application/octet-stream')
+        parquet_blob.upload_from_string(parquet_content, content_type='application/octet-stream')
 
 
         # -- แสดงข้อมูล --
