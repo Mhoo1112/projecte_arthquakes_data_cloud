@@ -6,7 +6,3 @@ steps:
 - name: 'gcr.io/cloud-builders/gsutil'
   args: ['rsync', '-r', 'dags/scripts/', 'gs://us-central1-earthquake-comp-d4045531/plugins']
   id: 'Deploy Python Scripts'
-
-options:
-  logging: GCS_ONLY
-  logsBucket: us-central1-earthquake-comp-d4045531
