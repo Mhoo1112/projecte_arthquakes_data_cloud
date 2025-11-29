@@ -1,11 +1,13 @@
 steps:
-
 - name: 'gcr.io/cloud-builders/gsutil'
-  args: ['rsync', '-r', 'dags/', 'gs://us-central1-earthquake-comp-d4045533-bucket/dags']
+  args: ['rsync', '-r', 'dags/', 'gs://us-central1-earthquake-comp-d4045531/dags']
   id: 'Deploy DAGs'
 
-
 - name: 'gcr.io/cloud-builders/gsutil'
-  args: ['rsync', '-r', 'dags/scripts/', 'gs://us-central1-earthquake-comp-d4045533-bucket/plugins']
+  args: ['rsync', '-r', 'dags/scripts/', 'gs://uus-central1-earthquake-comp-d4045531/plugins']
   id: 'Deploy Python Scripts'
-# Updated
+
+
+options:
+  logging: GCS_ONLY
+  logBucket: us-central1-earthquake-comp-d4045531
