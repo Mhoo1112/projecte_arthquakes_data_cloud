@@ -1,5 +1,5 @@
 
-logsBucket: us-central1-earthquake-comp-d4045531 
+logsBucket: cloudbuild-logs-479403 
 
 steps:
 - name: 'gcr.io/cloud-builders/gsutil'
@@ -7,6 +7,5 @@ steps:
   id: 'Deploy DAGs'
 
 - name: 'gcr.io/cloud-builders/gsutil'
-  args: ['rsync', '-r', 'dags/scripts/', 'gs://us-central1-earthquake-comp-d4045531/plugins']
+  args: ['rsync', '-r', 'dags/scripts/', 'gs://us-central1-earthquake-comp-d4045531/dags/scripts']
   id: 'Deploy Python Scripts'
-  
