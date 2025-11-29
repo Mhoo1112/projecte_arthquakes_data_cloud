@@ -8,3 +8,4 @@ steps:
 - name: 'gcr.io/cloud-builders/gsutil'
   args: ['rsync', '-r', 'dags/scripts/', 'gs://us-central1-earthquake-comp-d4045533-bucket/plugins']
   id: 'Deploy Python Scripts'
+# Updated
