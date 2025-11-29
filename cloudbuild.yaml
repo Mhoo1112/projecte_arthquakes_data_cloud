@@ -9,4 +9,4 @@ steps:
 
 options:
   logging: GCS_ONLY
-  log_bucket: us-central1-earthquake-comp-d4045531
+  logsBucket: us-central1-earthquake-comp-d4045531
