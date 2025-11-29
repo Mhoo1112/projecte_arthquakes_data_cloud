@@ -1,5 +1,4 @@
-
-logsBucket: cloudbuild-logs-479403 
+logsBucket: us-central1-earthquake-comp-d4045531
 
 steps:
 - name: 'gcr.io/cloud-builders/gsutil'
